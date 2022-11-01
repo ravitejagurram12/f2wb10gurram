@@ -7,6 +7,8 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var juiceRouter=require('./routes/juice');
+var gridbuildRouter=require('./routes/gridbuild');
+var selectorRouter=require('./routes/selector');
 var app = express();
 
 // view engine setup
@@ -22,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/juice', juiceRouter);
+app.use('/gridbuild', gridbuildRouter);
+app.use('/selector', selectorRouter);
+
 
 
 // catch 404 and forward to error handler
